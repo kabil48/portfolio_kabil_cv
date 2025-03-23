@@ -13,14 +13,14 @@ export default function About() {
 
       title: "À propos de",
       subtitle: "Développeur Full Stack",
-      description: "Développeur Full Stack avec plus de 2 ans d'expérience, spécialisé en PHP et technologies web modernes. Passionné par la création de solutions innovantes et l'apprentissage continu.",
+      description: "Développeur Full Stack passionné avec plus de 2 ans d'expérience, spécialisé en PHP, Symfony et technologies web modernes. Mon CV présente mes compétences et mes projets réalisés, allant de la création de solutions web à l'intégration de systèmes complexes. Toujours en quête de nouveaux défis et d'opportunités d'apprentissage, je m'engage à apporter des solutions innovantes et à contribuer au succès des projets auxquels je participe.",
       location: " Maroc",
       downloadCV: "Télécharger CV"
     },
     en: {
       title: "About",
       subtitle: "Full Stack Developer",
-      description: "Full Stack Developer with over 2 years of experience, specialized in PHP and modern web technologies. Passionate about creating innovative solutions and continuous learning.",
+      description: "Passionate Full Stack Developer with over 2 years of experience, specialized in PHP, Symfony, and modern web technologies. My CV showcases my skills and completed projects, from creating web solutions to integrating complex systems. Always seeking new challenges and learning opportunities, I am committed to delivering innovative solutions and contributing to the success of the projects I work on.",
       location: " Morocco",
       downloadCV: "Download CV"
     }
