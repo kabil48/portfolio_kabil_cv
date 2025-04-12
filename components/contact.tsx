@@ -18,6 +18,7 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [messageStatus, setMessageStatus] = useState<string>("");
 
   const handleChange = (en: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = en.target;
@@ -30,33 +31,36 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setMessageStatus(""); // Reset previous status
 
     emailjs
       .send(
-        "service_xxxxxx", // Remplacez par votre SERVICE_ID EmailJS
-        "template_xxxxxx", // Remplacez par votre TEMPLATE_ID EmailJS
+        "service_5dx3ljd", // Ton ID de service EmailJS
+        "template_bsw4tkw", // Ton TEMPLATE_ID EmailJS
         {
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: "bounouarakabil363@gmail.com", // Email de réception fixe
+          to_email: "bounouarakabil363@gmail.com", // Email de réception
         },
-        "user_xxxxxx" // Remplacez par votre PUBLIC_KEY EmailJS
+        "c9WMoGgdJlAUs2S1P" // Ta clé publique EmailJS
       )
       .then(
-        () =>
-          alert(
+        () => {
+          setMessageStatus(
             language === "fr"
               ? "Votre message a été envoyé avec succès !"
               : "Your message has been sent successfully!"
-          ),
-        () =>
-          alert(
+          );
+        },
+        () => {
+          setMessageStatus(
             language === "fr"
               ? "Une erreur est survenue. Veuillez réessayer."
               : "An error occurred. Please try again."
-          )
+          );
+        }
       )
       .finally(() => setIsSubmitting(false));
   };
@@ -125,7 +129,7 @@ export default function Contact() {
             </Button>
             <Button variant="ghost" size="icon" asChild>
               <a
-                href="https://www.instagram.com/kabil_kb01/"
+                href="https://www.instagram.com/kabil_ck01/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -190,6 +194,11 @@ export default function Contact() {
             {isSubmitting ? content[language].sending : content[language].send}
           </Button>
         </form>
+        {messageStatus && (
+          <div className="mt-4 text-center text-gray-400">
+            <p>{messageStatus}</p>
+          </div>
+        )}
       </div>
     </section>
   );
