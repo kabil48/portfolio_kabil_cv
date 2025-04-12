@@ -114,7 +114,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-cyan-400" />
-              <span>Fès, Maroc</span>
+              <span>Casablanca, Maroc</span>
             </div>
           </div>
           <div className="flex space-x-4 mt-6">
